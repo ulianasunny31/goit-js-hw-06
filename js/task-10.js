@@ -13,6 +13,10 @@ function createBoxes() {
   const amount = input.value;
   let boxSize = 30;
 
+  while (boxes.firstChild) {
+    boxes.removeChild(boxes.firstChild);
+  }
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     boxes.append(box);
@@ -33,18 +37,3 @@ function destroyBoxes() {
 
 btnCreate.addEventListener("click", createBoxes);
 btnDestroy.addEventListener("click", destroyBoxes);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//

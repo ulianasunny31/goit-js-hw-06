@@ -7,9 +7,11 @@ const ingredients = [
   "Condiments",
 ];
 
-const listItem = document.createElement("li");
-const ingredientsHtml = ingredients.map(
-  (ingredient) => `<li class="item">${ingredient}</li>`
-);
-const list = document.querySelector("#ingredients");
-list.insertAdjacentHTML("afterbegin", ingredientsHtml.join(""));
+const ingrList = document.querySelector("#ingredients");
+const ingredientsHtml = ingredients.map((ingredient) => {
+  const listItem = document.createElement("li");
+  listItem.textContent = ingredient;
+  listItem.classList.add("item");
+  return listItem;
+});
+ingrList.append(...ingredientsHtml);
